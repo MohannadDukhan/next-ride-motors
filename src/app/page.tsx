@@ -1,48 +1,66 @@
 import Link from "next/link";
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import FeaturedVehicles from './components/FeaturedVehicles';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8">
-      <div>
-        <h2 className="text-2xl font-semibold text-center border p-4 font-mono rounded-md">
-          Get started by choosing a template path from the /paths/ folder.
-        </h2>
-      </div>
-      <div>
-        <h1 className="text-6xl font-bold text-center">Make anything you imagine 🪄</h1>
-        <h2 className="text-2xl text-center font-light text-gray-500 pt-4">
-          This whole page will be replaced when you run your template path.
-        </h2>
-      </div>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="border rounded-lg p-6 hover:bg-gray-100 transition-colors">
-          <h3 className="text-xl font-semibold">AI Chat App</h3>
-          <p className="mt-2 text-sm text-gray-600">
-            An intelligent conversational app powered by AI models, featuring real-time responses
-            and seamless integration with Next.js and various AI providers.
-          </p>
+    <main className="min-h-screen bg-black">
+      <Navbar />
+      <Hero />
+      
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="w-16 h-16 mx-auto mb-4 text-red-500">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm1-8h4v2h-6V7h2v5z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Expert Service & Support</h3>
+              <p className="text-gray-400">Professional assistance available during business hours to help with your automotive needs.</p>
+            </div>
+            <div className="p-6">
+              <div className="w-16 h-16 mx-auto mb-4 text-red-500">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.995 6.9a.998.998 0 00-.548-.795l-8-4a1 1 0 00-.895 0l-8 4a1.002 1.002 0 00-.547.795c-.011.107-.961 10.767 8.589 15.014a.987.987 0 00.812 0c9.55-4.247 8.6-14.907 8.589-15.014zM12 20.897C4.173 17.148 4.951 8.89 5.074 7.026L12 3.545l6.926 3.48c.123 1.865.901 10.122-6.926 13.872z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Quality Guarantee</h3>
+              <p className="text-gray-400">Every vehicle undergoes rigorous inspection and certification process.</p>
+            </div>
+            <div className="p-6">
+              <div className="w-16 h-16 mx-auto mb-4 text-red-500">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zM9 9h6v2H9V9zm0 4h6v2H9v-2z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Easy Financing</h3>
+              <p className="text-gray-400">Flexible financing options tailored to your needs and budget.</p>
+            </div>
+          </div>
         </div>
-        <div className="border rounded-lg p-6 hover:bg-gray-100 transition-colors">
-          <h3 className="text-xl font-semibold">AI Image Generation App</h3>
-          <p className="mt-2 text-sm text-gray-600">
-            Create images from text prompts using AI, powered by the Replicate API and Next.js.
+      </section>
+
+      <FeaturedVehicles />
+
+      <section className="py-20 bg-[url('/showroom.jpg')] bg-cover bg-center relative">
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-8">Experience Luxury</h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Visit our state-of-the-art showroom and discover our curated collection of premium vehicles. 
+            Our expert team is ready to help you find your perfect match.
           </p>
+          <button className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors">
+            Schedule a Visit
+          </button>
         </div>
-        <div className="border rounded-lg p-6 hover:bg-gray-100 transition-colors">
-          <h3 className="text-xl font-semibold">Social Media App</h3>
-          <p className="mt-2 text-sm text-gray-600">
-            A feature-rich social platform with user profiles, posts, and interactions using
-            Firebase and Next.js.
-          </p>
-        </div>
-        <div className="border rounded-lg p-6 hover:bg-gray-100 transition-colors">
-          <h3 className="text-xl font-semibold">Voice Notes App</h3>
-          <p className="mt-2 text-sm text-gray-600">
-            A voice-based note-taking app with real-time transcription using Deepgram API, 
-            Firebase integration for storage, and a clean, simple interface built with Next.js.
-          </p>
-        </div>
-      </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }
